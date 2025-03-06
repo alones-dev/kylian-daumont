@@ -1,21 +1,183 @@
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@layer utilities {
+    .bg-noise {
+        opacity: .9;
+        background-blend-mode: normal;
+        background-image: url('/images/noise.webp');
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        height: 100vh;
+        width: 100vw;
+    }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+    scroll-behavior: smooth;
 }
+
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+    background: 
+        radial-gradient(circle at 50% 70%, #235a8ebe 0%, rgba(9, 15, 22, 1) 80%) center center / 100% 100% no-repeat,
+        rgba(9, 15, 22, 1);
+    background-attachment: fixed;
+}
+
+/* Animations */
+  
+@theme {  
+    --animate-wiggle: wiggle 1s ease-in-out infinite;  
+    
+    @keyframes wiggle {    
+        0%,    
+        100% {      
+            transform: rotate(-3deg);    
+        }    
+        50% {      
+            transform: rotate(3deg);    
+        }  
+    }
+}
+
+@keyframes gradientScroll {
+    0% { background-position: 200% 50%; }
+    100% { background-position: 0% 50%; }
+}
+ 
+@keyframes gradientScrollV {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+}
+
+.text-gradient {
+    background: linear-gradient(90deg, 
+        #FFD34E 0%, 
+        #69A3C2 20%, 
+        #235B8E 40%, 
+        #FFD34E 60%, 
+        #399ED4 80%, 
+        #FFD34E 100%
+    );
+    background-size: 200% 200%;  
+    animation: gradientScroll 10s infinite linear;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.paragraph-gradient {
+    background: linear-gradient(90deg, 
+        #59D7F6 0%, 
+        #235B8E 50%, 
+        #FFD34E 100%
+    );
+    background-size: 200% 200%;  
+    animation: gradientScroll 30s infinite linear;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.paragraph-gradient-v {
+    background: linear-gradient(90deg, 
+        #399ED4 0%, 
+        #FFD34E 50%, 
+        #59D7F6 100%
+    );
+    background-size: 200% 200%;  
+    animation: gradientScrollV 20s infinite linear;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.outline-gradient-animated {
+    background: linear-gradient(90deg, 
+        #FFD34E 0%, 
+        #69A3C2 20%, 
+        #235B8E 40%, 
+        #399ED4 80%, 
+        #FFD34E 100%
+    );
+    background-size: 200% 100%; 
+    animation: gradientScroll 3s infinite linear;
+    padding: 3px;
+    border-radius: 2rem;
+}
+
+.outline-gradient {
+    background: linear-gradient(90deg, 
+        #235B8E 0%,
+        #69A3C2 50%,
+        #235B8E 100%
+    );
+    background-size: 200% 100%;
+    animation: gradientScroll 6s infinite linear;
+    padding: 1.5px;
+    border-radius: 6px;
+}
+
+.outline-gradient-2 {
+    background: linear-gradient(90deg, 
+        #235B8E 0%,
+        #399ED4 50%,
+        #235B8E 100%
+    );
+    background-size: 200% 100%;
+    animation: gradientScroll 6s infinite linear;
+    padding: 1.5px;
+    border-radius: 6px;
+}
+
+@keyframes separatorScroll {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+}
+
+.separator-gradient {
+    background: linear-gradient(90deg, 
+        #FFD34E 0%, 
+        #69A3C2 15%, 
+        #235B8E 30%, 
+        #FFD34E 45%,
+        #081D58 60%,
+        #399ED4 75%, 
+        #FFD34E 100%
+    );
+    background-size: 200% 100%;
+    animation: separatorScroll 8s infinite linear;
+}
+
+/* Fonts */
+
+@font-face {
+    font-family: "satoshiBold";
+    src: url('/fonts/Satoshi-Bold.woff2') format("woff2"),
+        url('/fonts/Satoshi-Bold.woff') format("woff"),
+        url('/fonts/Satoshi-Bold.ttf') format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "satoshiRegular";
+    src: url('/fonts/Satoshi-Regular.woff2') format("woff2"),
+        url('/fonts/Satoshi-Regular.woff') format("woff"),
+        url('/fonts/Satoshi-Regular.ttf') format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "satoshiMedium";
+    src: url('/fonts/Satoshi-Medium.woff2') format("woff2"),
+        url('/fonts/Satoshi-Medium.woff') format("woff"),
+        url('/fonts/Satoshi-Medium.ttf') format("truetype");
+    font-weight: normal;
+    font-style: normal;
 }

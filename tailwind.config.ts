@@ -9,8 +9,26 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primary: "#090F16",
+        transparent: "transparent",
+        white: "#F5F5F5",
+        yellow: "#FFD34E",
+        lightBlue: "#69A3C2",
+        blue: "#399ED4",
+        darkBlue: "#235B8E",
+      },
+      fontFamily: {
+        satoshiBold: ["satoshiBold", "sans-serif"],
+        satoshiMedium: ["satoshiMedium", "sans-serif"],
+        satoshiRegular: ["satoshiRegular", "sans-serif"],
+      },
+      animation: {
+        'moving': 'moving 3s infinite linear',
+      },
+      keyframes: {
+        moving: {
+          "50%": {transform: "translateY(-25%)"},
+        }
       },
     },
   },
