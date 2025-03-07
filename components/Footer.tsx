@@ -3,7 +3,7 @@ import LightSeparator from './LightSeparator'
 
 const Footer = () => {
   return (
-    <div className="-my-[4em]">
+    <div className="my-[3em]">
         <LightSeparator></LightSeparator>
         <div className="mx-auto w-full max-w-7xl flex items-center justify-between px-10 py-2">
             <div className="flex flex-col items-start">

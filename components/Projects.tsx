@@ -3,14 +3,27 @@
 import React from 'react'
 import ProjectSlider from './ProjectSlider'
 import { SiGithub } from "react-icons/si";
+import { useInView } from 'react-intersection-observer'
+import {motion} from 'framer-motion'
 
 const Projects = () => {
   const openInNewTab = (url: string) => {
     window.open(url, "_blank", "noreferrer");
   };
 
+  const [ref, inView] = useInView({
+          triggerOnce: false, 
+          threshold: 0.1, 
+      })
+
   return (
-    <div className="flex flex-col items-center justify-center w-full my-[14em]">
+    <motion.div 
+        ref={ref}
+        initial={{ opacity: 0, y: 50 }} 
+        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+        transition={{ duration: 0.8, ease: "easeOut" }} 
+        className="flex flex-col items-center justify-center w-full -my-[5em]"
+    >
         <div className="flex flex-col items-center justify-center w-full">
             <a className="text-white font-satoshiBold text-xl">Recent projects</a>
             <a className="text-white font-satoshiRegular text-center text-base -my-1">
@@ -30,7 +43,7 @@ const Projects = () => {
                 </span>
             </button>
         </div>
-    </div>
+    </motion.div>
   )
 }
 

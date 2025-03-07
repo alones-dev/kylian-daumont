@@ -3,12 +3,14 @@
 import React, {useEffect} from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { SiTailwindcss, SiNestjs, SiReact, SiNodedotjs, SiTypescript, SiDjango, SiBootstrap, SiJavascript, SiHtml5, SiCss3, SiPostgresql } from "react-icons/si";
+import { RiNextjsFill } from "react-icons/ri";
 import { useRouter } from "next/navigation";
 import "./ProjectSlider.css"; 
 
 const techIcons = [
   { id: "tailwind", icon: <SiTailwindcss className="w-4 h-4 md:w-7 md:h-7" color="#38BDF8" /> },
   { id: "nestjs", icon: <SiNestjs className="w-4 h-4 md:w-7 md:h-7" color="#E0234E" /> },
+  { id: "nextjs", icon: <RiNextjsFill className="w-4 h-4 md:w-7 md:h-7" color="#a5c5d9" /> },
   { id: "react", icon: <SiReact className="w-4 h-4 md:w-7 md:h-7" color="#61DAFB" /> },
   { id: "nodejs", icon: <SiNodedotjs className="w-4 h-4 md:w-7 md:h-7" color="#68A063" /> },
   { id: "typescript", icon: <SiTypescript className="w-3.5 h-3.5 md:w-6 md:h-6" color="#3178C6" /> },
@@ -22,7 +24,7 @@ const techIcons = [
 
 const projects = [
   { title: "Matcha", stacks: ["typescript", "react", "nodejs", "nestjs", "tailwind"], image: "/images/template.jpg" },
-  { title: "Camagru", stacks: ["typescript", "react", "nodejs", "nestjs", "tailwind"], image: "/images/template-2.jpg" },
+  { title: "Le Yoga pour Sortir du lit", stacks: ["typescript", "react", "nextjs", "tailwind"], image: "/images/template-2.jpg" },
   { title: "ft-transcendence", stacks: ["javascript", "django", "bootstrap", "postgresql", "html"], image: "/images/template-3.avif" },
 ];
 
