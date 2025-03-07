@@ -1,23 +1,24 @@
 "use client";
 
-import React from "react";
+import React, {useEffect} from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { SiTailwindcss, SiNestjs, SiReact, SiNodedotjs, SiTypescript, SiDjango, SiBootstrap, SiJavascript, SiHtml5, SiCss3, SiPostgresql } from "react-icons/si";
 import { useRouter } from "next/navigation";
-import "./ProjectSlider.css"; // On ajoutera le CSS ci-dessous
+import "./ProjectSlider.css"; 
 
 const techIcons = [
-  { id: "tailwind", icon: <SiTailwindcss size={25} color="#38BDF8" /> },
-  { id: "nestjs", icon: <SiNestjs size={25} color="#E0234E" /> },
-  { id: "react", icon: <SiReact size={25} color="#61DAFB" /> },
-  { id: "nodejs", icon: <SiNodedotjs size={25} color="#68A063" /> },
-  { id: "typescript", icon: <SiTypescript size={20} color="#3178C6" /> },
-  { id: "django", icon: <SiDjango size={25} color="#092E20" /> },
-  { id: "bootstrap", icon: <SiBootstrap size={25} color="#7952B3" /> },
-  { id: "javascript", icon: <SiJavascript size={25} color="#F7DF1E" /> },
-  { id: "html5", icon: <SiHtml5 size={25} color="#E34F26" /> },
-  { id: "postgresql", icon: <SiPostgresql size={25} color="#336791" /> },
+  { id: "tailwind", icon: <SiTailwindcss className="w-4 h-4 md:w-7 md:h-7" color="#38BDF8" /> },
+  { id: "nestjs", icon: <SiNestjs className="w-4 h-4 md:w-7 md:h-7" color="#E0234E" /> },
+  { id: "react", icon: <SiReact className="w-4 h-4 md:w-7 md:h-7" color="#61DAFB" /> },
+  { id: "nodejs", icon: <SiNodedotjs className="w-4 h-4 md:w-7 md:h-7" color="#68A063" /> },
+  { id: "typescript", icon: <SiTypescript className="w-3.5 h-3.5 md:w-6 md:h-6" color="#3178C6" /> },
+  { id: "django", icon: <SiDjango className="w-4 h-4 md:w-7 md:h-7" color="#092E20" /> },
+  { id: "bootstrap", icon: <SiBootstrap className="w-4 h-4 md:w-7 md:h-7" color="#7952B3" /> },
+  { id: "javascript", icon: <SiJavascript className="w-4 h-4 md:w-7 md:h-7" color="#F7DF1E" /> },
+  { id: "html5", icon: <SiHtml5 className="w-4 h-4 md:w-7 md:h-7" color="#E34F26" /> },
+  { id: "postgresql", icon: <SiPostgresql className="w-4 h-4 md:w-7 md:h-7" color="#336791" /> },
 ];
+
 
 const projects = [
   { title: "Matcha", stacks: ["typescript", "react", "nodejs", "nestjs", "tailwind"], image: "/images/template.jpg" },
@@ -32,6 +33,13 @@ export default function ProjectSlider() {
     align: "center", 
     slidesToScroll: 1, 
   });
+
+  useEffect(() => {
+    if (emblaApi) {
+      const middleIndex = Math.floor(projects.length / 2);
+      emblaApi.scrollTo(middleIndex);
+    }
+  }, [emblaApi]);
 
   const handleClick = (title: string, index: number) => {
     if (emblaApi) emblaApi.scrollTo(index); 
@@ -58,7 +66,7 @@ export default function ProjectSlider() {
               className="embla__slide cursor-pointer outline-gradient-2 rounded-md overflow-hidden bg-gray-900"
               onClick={() => handleClick(project.title, index)}
             >
-              <div className="flex flex-col w-full h-[45vw] rounded-t-md bg-gray-900 p-4">
+              <div className="flex flex-col w-full h-[35vw] md:h-[30vw] rounded-t-md bg-gray-900 p-4">
                 <img
                   src={project.image}
                   alt={project.title}

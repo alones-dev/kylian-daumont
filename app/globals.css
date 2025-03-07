@@ -110,6 +110,20 @@ body {
     border-radius: 2rem;
 }
 
+.outline-gradient-animated-big {
+    background: linear-gradient(90deg, 
+        #FFD34E 0%, 
+        #69A3C2 20%, 
+        #235B8E 40%, 
+        #399ED4 80%, 
+        #FFD34E 100%
+    );
+    background-size: 200% 100%; 
+    animation: gradientScroll 3s infinite linear;
+    padding: 4px;
+    border-radius: 1.8rem;
+}
+
 .outline-gradient {
     background: linear-gradient(90deg, 
         #235B8E 0%,

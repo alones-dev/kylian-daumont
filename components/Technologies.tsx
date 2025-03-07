@@ -57,22 +57,22 @@ const Technologies = () => {
 
     return (
       <div className="flex flex-col items-center justify-center w-full -my-[10em]">
-      <div className="flex flex-col items-center justify-center w-full my-6">
-        <a className="text-white font-satoshiBold text-xl">Actual technologies</a>
-        <a className="text-white font-satoshiRegular text-base -my-1">here are some of the languages and technologies I usually use</a>
-      </div>
-      
-      <div className="grid grid-cols-2 gap-x-14 gap-y-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 my-4">
-        {skills.map((skill, idx) => (
-          <SkillCard key={idx} {...skill} />
-        ))}
-      </div>
+        <div className="flex flex-col items-center justify-center w-full my-6">
+          <a className="text-white font-satoshiBold text-xl">Actual technologies</a>
+          <a className="text-white font-satoshiRegular text-base -my-1">here are some of the languages and technologies I usually use</a>
+        </div>
+        
+        <div className="grid grid-cols-2 gap-x-4 gap-y-4 lg:gap-x-10 lg:gap-y-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 my-4">
+          {skills.map((skill, idx) => (
+            <SkillCard key={idx} {...skill} />
+          ))}
+        </div>
 
-      <div className='w-full py-[4em]'>
-        <Separator />
+        <div className='w-full py-[4em]'>
+          <Separator />
+        </div>
       </div>
-    </div>
-    )
-}
+    );
+};
 
 export default Technologies
