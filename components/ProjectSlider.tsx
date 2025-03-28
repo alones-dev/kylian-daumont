@@ -2,9 +2,8 @@
 
 import React, {useEffect} from "react";
 import useEmblaCarousel from "embla-carousel-react";
-import { SiTailwindcss, SiNestjs, SiReact, SiNodedotjs, SiTypescript, SiDjango, SiBootstrap, SiJavascript, SiHtml5, SiCss3, SiPostgresql } from "react-icons/si";
+import { SiTailwindcss, SiNestjs, SiReact, SiPrisma, SiTypescript, SiDjango, SiBootstrap, SiDocker, SiJavascript, SiHtml5, SiCss3, SiPostgresql } from "react-icons/si";
 import { RiNextjsFill } from "react-icons/ri";
-import { useRouter } from "next/navigation";
 import "./ProjectSlider.css"; 
 
 const techIcons = [
@@ -12,24 +11,27 @@ const techIcons = [
   { id: "nestjs", icon: <SiNestjs className="w-4 h-4 md:w-7 md:h-7" color="#E0234E" /> },
   { id: "nextjs", icon: <RiNextjsFill className="w-4 h-4 md:w-7 md:h-7" color="#a5c5d9" /> },
   { id: "react", icon: <SiReact className="w-4 h-4 md:w-7 md:h-7" color="#61DAFB" /> },
-  { id: "nodejs", icon: <SiNodedotjs className="w-4 h-4 md:w-7 md:h-7" color="#68A063" /> },
   { id: "typescript", icon: <SiTypescript className="w-3.5 h-3.5 md:w-6 md:h-6" color="#3178C6" /> },
-  { id: "django", icon: <SiDjango className="w-4 h-4 md:w-7 md:h-7" color="#092E20" /> },
+  { id: "django", icon: <SiDjango className="w-4 h-4 md:w-7 md:h-7" color="#02b028" /> },
   { id: "bootstrap", icon: <SiBootstrap className="w-4 h-4 md:w-7 md:h-7" color="#7952B3" /> },
   { id: "javascript", icon: <SiJavascript className="w-4 h-4 md:w-7 md:h-7" color="#F7DF1E" /> },
-  { id: "html5", icon: <SiHtml5 className="w-4 h-4 md:w-7 md:h-7" color="#E34F26" /> },
+  { id: "html", icon: <SiHtml5 className="w-4 h-4 md:w-7 md:h-7" color="#E34F26" /> },
   { id: "postgresql", icon: <SiPostgresql className="w-4 h-4 md:w-7 md:h-7" color="#336791" /> },
+  { id: "prisma", icon: <SiPrisma className="w-4 h-4 md:w-7 md:h-7" color="#b8b8b8" /> },
+  { id: "css", icon: <SiCss3 className="w-4 h-4 md:w-7 md:h-7" color="#44a6fc" /> },
+  { id: "docker", icon: <SiDocker className="w-4 h-4 md:w-7 md:h-7" color="#2496ED" /> },
 ];
 
 
 const projects = [
-  { title: "Matcha", stacks: ["typescript", "react", "nodejs", "nestjs", "tailwind"], image: "/images/template.jpg" },
-  { title: "Le Yoga pour Sortir du lit", stacks: ["typescript", "react", "nextjs", "tailwind"], image: "/images/template-2.jpg" },
-  { title: "ft-transcendence", stacks: ["javascript", "django", "bootstrap", "postgresql", "html"], image: "/images/template-3.avif" },
+  { title: "Matcha", stacks: ["typescript", "react", "nextjs", "nestjs", "tailwind"], image: "/images/projects/matcha.png" },
+  { title: "Camagru", stacks: ["typescript", "react", "nextjs", "tailwind", "prisma"], image: "/images/template.jpg" },
+  { title: "Le Yoga pour Sortir du lit", stacks: ["typescript", "react", "nextjs", "tailwind"], image: "/images/projects/ypsl.png" },
+  { title: "Sigma Rôleplay", stacks: ["typescript", "react", "nextjs", "tailwind"], image: "/images/projects/sigma.png" },
+  { title: "ft_transcendence", stacks: ["html", "css", "javascript", "django", "bootstrap", "postgresql", "docker"], image: "/images/projects/ft_transcendence.png" },
 ];
 
 export default function ProjectSlider() {
-  const router = useRouter();
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: false, 
     align: "center", 

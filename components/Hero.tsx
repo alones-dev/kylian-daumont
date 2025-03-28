@@ -40,7 +40,7 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 50 }} 
                 animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
                 transition={{ duration: 0.8, ease: "easeOut" }} 
-                className="mx-auto my-[6em] w-full flex flex-col items-center justify-center"
+                className="mx-auto w-full h-screen flex flex-col items-center justify-center"
             >
                 <AnimatePresence mode="wait">
                     <motion.span
@@ -102,7 +102,7 @@ const Hero = () => {
                 </motion.a>
 
             </motion.div>
-                <div className="absolute -bottom-[20%] left-0 w-full">
+                <div className="absolute left-0 w-full">
                     <Separator></Separator>
                 </div>
         </div>

@@ -16,7 +16,7 @@ const AboutMe = () => {
       initial={{ opacity: 0, y: 50 }} 
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.8, ease: "easeOut" }} 
-      className="flex flex-col items-center justify-center w-full my-[9em]"
+      className="flex flex-col items-center justify-center w-full mt-16 my-[9em]"
     >
         <a className="font-satoshiBold text-center text-white text-sm">About me</a>
         

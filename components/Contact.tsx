@@ -23,7 +23,7 @@ const Contact = () => {
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.8, ease: "easeOut" }} 
       id="contact" 
-      className="flex flex-col items-center justify-center w-full mt-[2em]"
+      className="flex flex-col items-center justify-center w-full mt-16"
     >
       <a className="font-satoshiBold text-center text-white text-sm">Contact me</a>
 
