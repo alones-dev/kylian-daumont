@@ -30,10 +30,10 @@ const Projects = () => {
                 take a look at the different projects in my portfolio, both professional and personal
             </a>
         </div>
-        <div className="w-full flex justify-center my-12">
+        <div className="w-full flex justify-center my-12 relative">
             <ProjectSlider />
         </div>
-        <div className="flex items-center justify-center w-full -my-4">
+        <div className="flex items-center justify-center w-full">
             <button className="relative inline-flex items-center justify-center transition-all ease-in duration-75 p-0.5 mb-2 ml-1 overflow-hidden text-sm md:text-lg font-satoshiBold text-white rounded-3xl group hover:scale-110 outline-gradient-animated"
                 onClick={() => openInNewTab("https://github.com/alones-dev")}
             >
