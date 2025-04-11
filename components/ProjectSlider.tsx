@@ -2,7 +2,7 @@
 
 import React, {useEffect} from "react";
 import useEmblaCarousel from "embla-carousel-react";
-import { SiTailwindcss, SiNestjs, SiReact, SiPrisma, SiTypescript, SiDjango, SiBootstrap, SiDocker, SiJavascript, SiHtml5, SiCss3, SiPostgresql, SiGithub } from "react-icons/si";
+import { SiTailwindcss, SiNodedotjs, SiReact, SiPrisma, SiTypescript, SiDjango, SiBootstrap, SiDocker, SiJavascript, SiHtml5, SiCss3, SiPostgresql, SiGithub } from "react-icons/si";
 import { RiNextjsFill } from "react-icons/ri";
 import { FiExternalLink } from "react-icons/fi";
 
@@ -10,7 +10,7 @@ import "./ProjectSlider.css";
 
 const techIcons = [
   { id: "tailwind", icon: <SiTailwindcss className="w-4 h-4 md:w-7 md:h-7" color="#38BDF8" /> },
-  { id: "nestjs", icon: <SiNestjs className="w-4 h-4 md:w-7 md:h-7" color="#E0234E" /> },
+  { id: "nodejs", icon: <SiNodedotjs className="w-4 h-4 md:w-7 md:h-7" color="#05e841" /> },
   { id: "nextjs", icon: <RiNextjsFill className="w-4 h-4 md:w-7 md:h-7" color="#a5c5d9" /> },
   { id: "react", icon: <SiReact className="w-4 h-4 md:w-7 md:h-7" color="#61DAFB" /> },
   { id: "typescript", icon: <SiTypescript className="w-3.5 h-3.5 md:w-6 md:h-6" color="#3178C6" /> },
@@ -28,7 +28,7 @@ const techIcons = [
 const projects = [
   { 
     title: "Matcha", 
-    stacks: ["typescript", "react", "nextjs", "nestjs", "tailwind"], 
+    stacks: ["typescript", "react", "nextjs", "nodejs", "tailwind"], 
     image: "/images/projects/matcha.png", 
     link: "https://github.com/alones-dev/matcha",
     github: true
@@ -38,6 +38,13 @@ const projects = [
     stacks: ["typescript", "react", "nextjs", "tailwind", "prisma"], 
     image: "/images/projects/camagru.png", 
     link: "https://github.com/alones-dev/camagru",
+    github: true 
+  },
+  { 
+    title: "Todo App", 
+    stacks: ["typescript", "react", "nextjs", "tailwind", "prisma"], 
+    image: "/images/projects/todo-app.png", 
+    link: "https://github.com/alones-dev/todo-app",
     github: true 
   },
   { 

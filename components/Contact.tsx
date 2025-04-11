@@ -43,12 +43,12 @@ const Contact = () => {
 
         <button
           className="relative inline-flex items-center justify-center transition-all ease-in duration-75 p-0.5 mb-2 overflow-hidden text-lg font-satoshiBold text-white group hover:scale-110 outline-gradient-animated-big w-[200px] h-[200px] sm:w-[250px] sm:h-[250px] lg:w-[300px] lg:h-[300px]"
-          onClick={() => window.location.href = "mailto:kyliandaumont78@gmail.com"}
+          onClick={() => window.location.href = "mailto:kylian.daumont.dev@gmail.com"}
         >
           <span className="relative flex flex-col items-center justify-center px-5 py-2.5 space-y-4 transition-all ease-in duration-75 bg-[#000000cb] rounded-3xl w-full h-full">
             <IoIosMail className="text-3xl sm:text-4xl lg:text-[45px]" />
             <span className="text-white text-xl sm:text-2xl lg:text-3xl font-satoshiBold">Mail</span>
-            <span className="text-gray-300 text-sm sm:text-base lg:text-lg font-satoshiMedium text-center px-2">contact@kyliandaumont.fr</span>
+            <span className="text-gray-300 text-sm sm:text-base lg:text-lg font-satoshiMedium text-center px-2">kylian.daumont.dev@gmail.com</span>
           </span>
         </button>
 

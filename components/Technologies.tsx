@@ -42,10 +42,10 @@ const Technologies = () => {
           push: true
         },
         {
-          image: "/images/skills/NestJS.svg",
-          color: "#730C00",
-          title: "Nest.js",
-          desc: "Node.js framework",
+          image: "/images/skills/nodejs.png",
+          color: "#002b36",
+          title: "Node.js",
+          desc: "Backend programming",
           w: 45,
           h: 45
         },
