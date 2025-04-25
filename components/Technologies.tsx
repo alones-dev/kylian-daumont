@@ -61,8 +61,8 @@ const Technologies = () => {
           color: "#002b36",
           title: "Node.js",
           desc: { 
-            en: "Backend programming",
-            fr: "Langage backend"
+            en: "Backend runtime",
+            fr: "Backend runtime"
           },
           w: 45,
           h: 45
