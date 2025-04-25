@@ -1,17 +1,20 @@
 import React from 'react';
 import Image from 'next/image';
+import { useLanguage } from '@/app/context/LanguageContext';
 
 interface SkillCardProps {
   image: string;
   color: string;
   title: string;
-  desc: string;
+  desc: {en: string, fr: string};
   w: number;
   h: number;
   push?: boolean;
 }
 
 const SkillCard: React.FC<SkillCardProps> = ({ image, color, title, desc, w, h, push }) => {
+  const { lang } = useLanguage();
+  
   return (
     <div className="transition-all ease-in duration-75 w-[12em] md:w-[15em] rounded-md overflow-hidden outline-gradient hover:scale-105">
       <div className="flex w-full h-[3em] md:h-[4em] rounded-md bg-gray-900">
@@ -33,7 +36,7 @@ const SkillCard: React.FC<SkillCardProps> = ({ image, color, title, desc, w, h, 
 
         <div className="flex flex-col flex-grow items-center h-full justify-center -my-[1px]">
           <a className="text-white font-satoshiBold text-center text-sm md:text-base">{title}</a>
-          <a className="text-white font-satoshiRegular text-center text-sm md:text-base">{desc}</a>
+          <a className="text-white font-satoshiRegular text-center text-sm md:text-base">{desc[lang]}</a>
         </div>
       </div>
     </div>

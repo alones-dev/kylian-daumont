@@ -5,10 +5,13 @@ import {useState, useEffect} from 'react'
 import {motion, AnimatePresence} from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import Separator from './Separator'
+import { translations } from '@/locales/translations'
+import { useLanguage } from '@/app/context/LanguageContext'
 
 const HEY_LANGS = ["Hello", "Salut", "Hallo", "Hola", "안녕", "Zdravo", "Szia", "你好", "Tere", "Hui", "Ciao", "Salom", "こんにちは"]
 
 const Hero = () => {
+    const { lang } = useLanguage()
     let [text, setText] = useState(HEY_LANGS[0])
     const [ref, inView] = useInView({
         triggerOnce: false, 
@@ -60,7 +63,7 @@ const Hero = () => {
                     transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                     className="flex items-center justify-center my-4 space-x-4 w-full"
                 >
-                    <a className="font-satoshiMedium text-5xl text-white">I'm</a>
+                    <a className="font-satoshiMedium text-5xl text-white">{translations[lang].me}</a>
                     <a className="font-satoshiBold text-5xl text-white mx-1">Kylian</a>
                 </motion.div>
 
@@ -70,7 +73,7 @@ const Hero = () => {
                     transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
                     className="font-satoshiBold text-4xl sm:text-5xl md:text-6xl my-5 text-center text-gradient"
                 >
-                    French fullstack developer
+                    {translations[lang].fullstackDeveloper}
                 </motion.a>
 
                 <a 
@@ -85,8 +88,8 @@ const Hero = () => {
                     transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
                     className="flex flex-col items-center justify-center w-full"
                 >  
-                    <p className="font-satoshiRegular text-center text-lg md:text-xl lg:text-1xl text-white mx-3 -my-5">Hello, my name is Kylian, I’m a French fullstack developer living near Paris.</p>
-                    <p className="font-satoshiRegular text-center text-lg md:text-xl lg:text-1xl text-white mx-3 my-5">I’ll be happy to discuss your project and help you to implement it !</p>
+                    <p className="font-satoshiRegular text-center text-lg md:text-xl lg:text-1xl text-white mx-3 -my-5">{translations[lang].welcome}</p>
+                    <p className="font-satoshiRegular text-center text-lg md:text-xl lg:text-1xl text-white mx-3 my-5">{translations[lang].projectWithMe}</p>
                 </motion.div>
 
                 <motion.a 
@@ -97,7 +100,7 @@ const Hero = () => {
                     className="pointer-clicker relative inline-flex items-center justify-center transition-all ease-in duration-75 my-6 p-0.5 mb-2 ml-1 overflow-hidden text-sm font-satoshiMedium text-white rounded-3xl group hover:scale-110 outline-gradient-animated"
                 >
                     <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-gray-900 rounded-3xl">
-                        Have a project ?
+                        {translations[lang].haveProject}
                     </span>
                 </motion.a>
 
