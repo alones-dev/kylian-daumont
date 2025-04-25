@@ -7,7 +7,7 @@ import { FiExternalLink } from "react-icons/fi";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
-import { EffectCoverflow, Navigation } from 'swiper/modules';
+import { EffectCoverflow, Navigation, Mousewheel } from 'swiper/modules';
 import { useLanguage } from "@/app/context/LanguageContext";
 
 const techIcons = [
@@ -124,7 +124,14 @@ export default function ProjectSlider() {
             modifier: 2.5,
             slideShadows: false,
           }}
-          modules={[EffectCoverflow, Navigation]}
+          modules={[EffectCoverflow, Navigation, Mousewheel]}
+          mousewheel={{
+            forceToAxis: true,    
+            releaseOnEdges: true,
+            sensitivity: 1,      
+            thresholdDelta: 10, 
+            thresholdTime: 500, 
+          }}
           className="swiper-container"
           initialSlide={Math.floor(projects.length / 2)}
           slideToClickedSlide={true}
@@ -170,7 +177,54 @@ export default function ProjectSlider() {
         </Swiper>
       </div>
 
-      
+      <div className="md:hidden grid grid-cols-1 gap-4 px-4">
+        {projects.map((project, index) => (
+          <a
+            key={index}
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cursor-pointer outline-gradient-2 rounded-md overflow-hidden bg-gray-900 relative flex flex-col h-full"
+          >
+            <div className="flex flex-col w-full h-64 rounded-t-md bg-gray-900 p-4">
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-full rounded-md object-cover"
+              />
+            </div>
+            
+            <div className="w-full p-4 bg-gray-900 rounded-b-md border-t border-gray-700 flex-grow">
+              <span className="text-white font-satoshiBold text-lg">
+                {project.title}
+              </span>
+              <p className="text-gray-400 text-sm mt-1 font-satoshiMedium">
+                {project.desc[lang]}
+              </p>
+              <div className="flex flex-wrap gap-2 mt-3">
+                {showIcons(project.stacks)}
+              </div>
+            </div>
+
+            <div className="absolute top-3 right-3 z-10">
+              <div className="
+                w-8 h-8
+                rounded-full 
+                border-2 border-gray-300
+                bg-gray-900 
+                flex items-center justify-center transition-all duration-200
+                hover:scale-110 hover:border-blue group
+              ">
+                {project.github ? (
+                  <SiGithub className="text-white w-4 h-4 group-hover:text-blue transition-all duration-200" />
+                ) : (
+                  <FiExternalLink className="text-white w-4 h-4 group-hover:text-blue transition-all duration-200" />
+                )}
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
     </div>
   );
 
