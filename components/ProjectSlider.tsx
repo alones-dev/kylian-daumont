@@ -32,7 +32,7 @@ const projects = [
   { 
     title: "Matcha", 
     desc: {
-      en: "web dating application, including user management, real-time chat, matchmaking system, geolocation, search filters...",
+      en: "Web dating application, including user management, real-time chat, matchmaking system, geolocation, search filters...",
       fr: "Application web de rencontre, incluant la gestion des utilisateurs, le chat en temps réel, le système de matchmaking, la géolocalisation, les filtres de recherche..."
     },
     stacks: ["typescript", "react", "nextjs", "nestjs", "tailwind"], 
